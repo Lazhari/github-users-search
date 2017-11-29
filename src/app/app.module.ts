@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 
+import { GithubService } from './github.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { AppHeaderComponent } from './app-header/app-header.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
