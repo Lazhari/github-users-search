@@ -9,17 +9,18 @@ import { GithubService } from '../github.service';
 export class UserProfileComponent implements OnInit {
   user: any;
   repos: any;
-  username: string = 'lazhari';
+  //username: string = 'lazhari';
 
   constructor(private _githubService: GithubService) {
     this.user = null;
   }
 
   ngOnInit() {
-    this.searchUser();
+    //this.searchUser();
   }
-  searchUser() {
-    this._githubService.updateUser(this.username);
+  searchUser(username: string) {
+    console.log('username', username);
+    this._githubService.updateUser(username);
     // Get User Profile 
     this._githubService.getUser().subscribe(user => {
       this.user = user;
