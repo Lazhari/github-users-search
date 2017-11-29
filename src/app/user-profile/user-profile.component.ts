@@ -26,7 +26,7 @@ export class UserProfileComponent implements OnInit {
     });
     // Get user Repos 
     this._githubService.getRepos().subscribe(repos => {
-      this.repos = repos;
+      this.repos = repos.sort((a, b) => (b.stargazers_count - a.stargazers_count));
     });
   }
 
